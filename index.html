@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Success Private Schools — For a Greater Tomorrow</title>
+<meta name="description" content="Success Private Schools — Nursery, Primary & Secondary education in Ipaja, Lagos. Admission in progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marigold:#E8A33D;
+    --marigold-deep:#C97F1E;
+    --clay:#C4531F;
+    --navy:#1B3B6F;
+    --navy-soft:#3A5680;
+    --ink:#16283E;
+    --umber:#3A2417;
+    --umber-soft:#8A6A52;
+    --paper:#FBF4E8;
+    --chalk:#FFFCF5;
+    --line: rgba(22,40,62,0.14);
+    --max: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+    width:100%;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px; width:100%;}
+  .ruled{
+    height:34px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 32px, var(--line) 33px
+    );
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .reveal{
+    opacity:0;
+    transform: translateY(56px) scale(.97);
+    transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0) scale(1);}
+  .reveal-stagger > *{
+    opacity:0; transform:translateY(46px) scale(.96);
+    transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal-stagger.is-visible > *{opacity:1; transform:translateY(0) scale(1);}
+  .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.04s;}
+  .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.16s;}
+  .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.28s;}
+  .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.40s;}
+  .reveal-left{
+    opacity:0; transform: translateX(-64px);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal-left.is-visible{ opacity:1; transform:translateX(0); }
+  .reveal-right{
+    opacity:0; transform: translateX(64px);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal-right.is-visible{ opacity:1; transform:translateX(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-stagger > *, .reveal-left, .reveal-right{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+    .seal{animation:none !important;}
+  }
+
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,252,245,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+    transition: box-shadow .25s ease;
+  }
+  header.site.scrolled{ box-shadow: 0 6px 20px -12px rgba(22,40,62,0.25); }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 24px;
+    max-width:var(--max); margin:0 auto;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+    min-width:0;
+  }
+  .brand-text{line-height:1.15; min-width:0;}
+  .brand-text .name{font-family:'Fraunces', serif; font-weight:700; font-size:16px; color:var(--ink); white-space:nowrap;}
+  .brand-text .sub{font-size:10.5px; letter-spacing:.03em; color:var(--navy-soft);}
+  nav.links{display:flex; gap:26px; font-size:15px; font-weight:500;}
+  nav.links a{text-decoration:none; padding-bottom:4px; border-bottom:2px solid transparent; transition:border-color .15s ease; white-space:nowrap;}
+  nav.links a:hover{border-color:var(--marigold-deep);}
+  .nav-cta{
+    background:var(--clay); color:var(--chalk); text-decoration:none;
+    padding:10px 18px; border-radius:3px; font-weight:600; font-size:14px;
+    white-space:nowrap; display:inline-flex; align-items:center; gap:8px;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .nav-cta:hover{background:var(--navy); transform:translateY(-1px);}
+  .nav-cta svg{width:15px; height:15px;}
+  .menu-btn{display:none; background:none; border:none; cursor:pointer; padding:4px; flex-shrink:0;}
+  .menu-btn svg{width:24px; height:24px; color:var(--ink);}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    text-decoration:none; font-weight:600; font-size:15px;
+    padding:14px 26px; border-radius:3px; border:1.5px solid transparent;
+    cursor:pointer;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn svg{width:17px; height:17px; flex-shrink:0;}
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--ink); color:var(--chalk);}
+  .btn-primary:hover{background:var(--navy); box-shadow:0 10px 22px -10px rgba(22,40,62,0.55); transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink); background:transparent;}
+  .btn-ghost:hover{background:var(--ink); color:var(--chalk); transform:translateY(-2px);}
+  .btn-clay{background:var(--clay); color:var(--chalk);}
+  .btn-clay:hover{background:#a3430f; transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(196,83,31,0.55);}
+  .btn-outline-light{border-color:rgba(255,252,245,0.7); color:var(--chalk);}
+  .btn-outline-light:hover{background:var(--chalk); color:var(--ink); transform:translateY(-2px);}
+
+  .hero{
+    padding:56px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:40px;
+    align-items:center;
+    max-width:720px;
+  }
+  .kicker{
+    font-size:14px; color:var(--clay); font-weight:600;
+    margin-bottom:12px; font-style:italic; font-family:'Fraunces', serif;
+  }
+  .hero h1{
+    font-size:clamp(34px, 7vw, 62px);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--marigold-deep);
+  }
+  .hero p.lede{
+    margin-top:20px;
+    font-size:17px;
+    max-width:46ch;
+    color:var(--navy-soft);
+  }
+  .hero-ctas{
+    margin-top:28px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .stripe-tags{
+    margin-top:30px; display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+  .stripe-tags span{
+    font-size:12.5px; font-weight:600; color:var(--navy-soft);
+    padding-right:16px; margin-right:16px; border-right:1px solid var(--line);
+  }
+  .stripe-tags span:last-child{border-right:none;}
+
+  section{padding:64px 0;}
+  .eyebrow{
+    font-family:'Fraunces', serif; font-style:italic; color:var(--clay);
+    font-size:16px; margin-bottom:8px;
+  }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:40px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(26px,4vw,38px); max-width:560px;}
+  .section-head p{max-width:38ch; color:var(--navy-soft); font-size:15px;}
+
+  .about-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:start;
+  }
+  .about-grid p{color:var(--navy-soft); margin-bottom:16px; font-size:16px;}
+  .stat-row{
+    display:grid; grid-template-columns: repeat(3,1fr); gap:0;
+    margin-top:26px; border-top:1px solid var(--line);
+  }
+  .stat{
+    padding:20px 16px 0 0; border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Fraunces', serif; font-size:32px; color:var(--clay); font-weight:600;}
+  .stat .label{font-size:12.5px; color:var(--navy-soft); margin-top:4px;}
+
+  .ledger{border-top:1px solid var(--ink);}
+  .ledger-row{
+    display:grid; grid-template-columns: 90px 1fr 1.4fr; gap:24px;
+    padding:28px 0; border-bottom:1px solid var(--line);
+    align-items:start;
+  }
+  .ledger-row .tag{
+    font-family:'Fraunces', serif; font-size:15px; color:var(--marigold-deep); font-weight:600; padding-top:4px;
+  }
+  .ledger-row h3{font-size:23px;}
+  .ledger-row .desc{color:var(--navy-soft); font-size:15px; padding-top:4px;}
+  .ledger-row .desc .age{
+    display:block; font-size:11.5px; letter-spacing:.03em; color:var(--clay); font-weight:600; margin-bottom:6px;
+  }
+
+  .why-band{ background:var(--umber); color:var(--chalk); }
+  .why-band .section-head h2, .why-band .eyebrow{color:var(--chalk);}
+  .why-band .eyebrow{color:var(--marigold);}
+  .why-band .section-head p{color:#D9C4B0;}
+  .why-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap:1px;
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.14);
+  }
+  .why-item{
+    background:var(--umber); padding:28px 30px;
+    transition: background .25s ease;
+  }
+  .why-item:hover{ background:#4A311F; }
+  .why-item .idx{ font-family:'Fraunces', serif; font-style:italic; color:var(--marigold); font-size:15px; }
+  .why-item h3{color:var(--chalk); font-size:18px; margin-top:10px;}
+  .why-item p{color:#D9C4B0; font-size:14px; margin-top:8px;}
+
+  .life-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  .life-block{
+    border-radius:4px;
+    display:flex; flex-direction:column; justify-content:space-between; padding:20px;
+    color:var(--chalk);
+    min-height:170px;
+    transition: transform .3s ease;
+  }
+  .life-block:hover{ transform:translateY(-4px); }
+  .life-block .lb-icon{
+    width:34px; height:34px; opacity:.9;
+  }
+  .life-block .lb-name{
+    font-family:'Fraunces', serif; font-size:19px; font-style:italic;
+  }
+  .life-block .lb-tag{
+    font-size:12.5px; font-weight:600; letter-spacing:.02em;
+    opacity:.85; margin-top:4px;
+  }
+  .life-block:nth-child(1){background:linear-gradient(160deg,#E8A33D,#C4531F);}
+  .life-block:nth-child(2){background:linear-gradient(160deg,var(--navy),var(--ink));}
+  .life-block:nth-child(3){background:linear-gradient(160deg,#C4531F,#7a2c0c); grid-column:span 2;}
+
+  .admissions{ background: var(--marigold); position:relative; overflow:hidden; }
+  .admissions-inner{
+    display:grid; grid-template-columns: 1.3fr 1fr; gap:36px; align-items:center;
+  }
+  .admissions h2{font-size:clamp(28px,4.4vw,42px); color:var(--ink);}
+  .admissions p{color:#3A2E12; margin-top:14px; max-width:46ch; font-size:16px;}
+  .steps{
+    background:var(--chalk); border:1px solid rgba(22,40,62,0.18); border-radius:4px; padding:26px;
+  }
+  .steps ol{margin:0; padding:0; list-style:none; counter-reset:step;}
+  .steps li{
+    counter-increment:step; display:flex; gap:14px; padding:12px 0;
+    border-bottom:1px solid var(--line); font-size:14px;
+  }
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{
+    content:counter(step);
+    font-family:'Fraunces', serif; font-weight:700; color:var(--clay);
+    font-size:15px; flex-shrink:0;
+  }
+
+  .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:48px; }
+  .contact-list{list-style:none; margin:22px 0 0; padding:0;}
+  .contact-list li{ border-top:1px solid var(--line); }
+  .contact-list li:last-child{ border-bottom:1px solid var(--line); }
+  .contact-list a.c-row{
+    display:flex; gap:16px; padding:18px 4px;
+    font-size:15px; text-decoration:none; color:inherit;
+    border-radius:4px;
+    transition: background .15s ease, padding-left .15s ease;
+  }
+  .contact-list a.c-row:hover{ background:rgba(196,83,31,0.07); padding-left:10px; }
+  .contact-list .ico-wrap{
+    width:38px; height:38px; border-radius:50%; background:var(--ink); color:var(--marigold);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-list .ico-wrap svg{width:18px; height:18px;}
+  .contact-list .k{font-weight:600; display:block; margin-bottom:2px;}
+  .contact-list .v{color:var(--navy-soft);}
+  .contact-list li.static .c-row{ cursor:default; }
+  .contact-list li.static .c-row:hover{ background:transparent; padding-left:4px; }
+
+  .map-block{
+    background:var(--ink); border-radius:4px; min-height:260px;
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:30px;
+  }
+  .map-block .pin{ width:40px; height:40px; color:var(--marigold); margin:0 auto 14px; }
+  .map-block p{color:var(--chalk); font-family:'Fraunces', serif; font-style:italic; font-size:17px; max-width:26ch; margin:0 auto;}
+  .map-block span{display:block; color:#AEC0D6; font-size:13px; margin-top:10px;}
+  .map-block .btn{ margin-top:18px; }
+
+  footer{ background:var(--ink); color:#AEC0D6; padding:40px 0 24px; font-size:14px; }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+    padding-bottom:26px; border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-top .brand-text .name{color:var(--chalk);}
+  .footer-top .brand-text .sub{color:#AEC0D6;}
+  .footer-links{display:flex; gap:24px; flex-wrap:wrap;}
+  .footer-links a{text-decoration:none; color:#AEC0D6; font-size:14px;}
+  .footer-links a:hover{color:var(--marigold);}
+  .footer-bottom{
+    padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12.5px;
+  }
+
+  @media (max-width: 860px){
+    nav.links, .nav-cta{display:none;}
+    .menu-btn{display:block;}
+    .hero-grid, .about-grid, .admissions-inner, .contact-grid{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:1fr; gap:6px;}
+    .why-grid{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr; gap:12px;}
+    .stat{border-right:none; border-bottom:1px solid var(--line); padding-bottom:12px;}
+    section{padding:48px 0;}
+    .hero{padding:36px 0 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Success Private Schools home">
+      <div class="brand-text">
+        <div class="name">Success Private Schools</div>
+        <div class="sub">For a greater tomorrow</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#why">Why Us</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="tel:+2347031302021">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2.28a2 2 0 012 1.72l.36 2.5a2 2 0 01-.53 1.72l-1.2 1.2a16 16 0 006.5 6.5l1.2-1.2a2 2 0 011.72-.53l2.5.36a2 2 0 011.72 2V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V6z"/></svg>
+      Call Now
+    </a>
+    <button class="menu-btn" aria-label="Menu" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal-left is-visible">
+      <div class="kicker">Nursery · Primary · Secondary</div>
+      <h1>Raising stars,<br><em>building</em> futures.</h1>
+      <p class="lede">Success Private Schools gives every child a conducive environment for excellent learning, strong values, and total development — from their first day in Nursery through to Secondary graduation.</p>
+      <div class="stripe-tags">
+        <span>Qualified &amp; dedicated teachers</span>
+        <span>Modern learning facilities</span>
+        <span>Total child development</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ruled"></div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="reveal-left">
+      <div class="eyebrow">Who we are</div>
+      <h2 style="font-size:32px; margin-bottom:18px;">A school built around the child, not the timetable.</h2>
+      <p>At Success Private Schools, learning is never one-size-fits-all. Our classrooms are shaped around how children actually grow — curious, active, and ready to be trusted with real responsibility. We pair academic rigour with the values and confidence that carry a child well beyond the school gate.</p>
+      <p>Located at Imam Babatunde Street in the heart of Ipaja, we welcome parents across Mosan, Pipeline Road and the wider community into a school designed for total development: mind, character, and community.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">3</div><div class="label">School sections — Nursery, Primary, Secondary</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">Qualified, dedicated teaching staff</div></div>
+        <div class="stat"><div class="num">1</div><div class="label">Community, one shared standard</div></div>
+      </div>
+    </div>
+    <div class="life-grid reveal-stagger reveal">
+      <div class="life-block">
+        <svg class="lb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg>
+        <div>
+          <div class="lb-name">Nursery</div>
+          <div class="lb-tag">Early years · play-based foundations</div>
+        </div>
+      </div>
+      <div class="life-block">
+        <svg class="lb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        <div>
+          <div class="lb-name">Primary</div>
+          <div class="lb-tag">Foundational years · core academics</div>
+        </div>
+      </div>
+      <div class="life-block">
+        <svg class="lb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+        <div>
+          <div class="lb-name">Secondary</div>
+          <div class="lb-tag">Senior years · exam &amp; leadership readiness</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs" style="background:var(--chalk); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">What we offer</div>
+        <h2>Three stages, one standard of care.</h2>
+      </div>
+      <p>Every stage is staffed, resourced and paced to meet children exactly where they are.</p>
+    </div>
+    <div class="ledger reveal-stagger reveal">
+      <div class="ledger-row">
+        <div class="tag">01</div>
+        <h3>Nursery</h3>
+        <div class="desc">
+          <span class="age">EARLY YEARS</span>
+          A warm, secure introduction to school life — building language, numeracy foundations, social skills and independence through guided play and structured routine.
+        </div>
+      </div>
+      <div class="ledger-row">
+        <div class="tag">02</div>
+        <h3>Primary</h3>
+        <div class="desc">
+          <span class="age">FOUNDATIONAL YEARS</span>
+          A broad, well-paced curriculum in literacy, numeracy, science and creative subjects, delivered by dedicated teachers who track every child's progress closely.
+        </div>
+      </div>
+      <div class="ledger-row">
+        <div class="tag">03</div>
+        <h3>Secondary</h3>
+        <div class="desc">
+          <span class="age">SENIOR YEARS</span>
+          Rigorous academic preparation alongside mentorship and leadership opportunities, equipping students with the values and results to thrive after graduation.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why-band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Why choose us</div>
+        <h2>What parents can expect.</h2>
+      </div>
+      <p>The standards we hold ourselves to, every single day.</p>
+    </div>
+    <div class="why-grid reveal-stagger reveal">
+      <div class="why-item">
+        <div class="idx">i.</div>
+        <h3>Qualified &amp; dedicated teachers</h3>
+        <p>Every classroom is led by trained educators committed to each child's individual growth, not just the syllabus.</p>
+      </div>
+      <div class="why-item">
+        <div class="idx">ii.</div>
+        <h3>Modern learning facilities</h3>
+        <p>Clean, well-resourced classrooms and learning spaces designed to support focused, hands-on learning.</p>
+      </div>
+      <div class="why-item">
+        <div class="idx">iii.</div>
+        <h3>Conducive environment</h3>
+        <p>A safe, structured school environment where children feel secure enough to ask questions, make mistakes, and grow.</p>
+      </div>
+      <div class="why-item">
+        <div class="idx">iv.</div>
+        <h3>Total child development</h3>
+        <p>Academics matter, but so do values, character and confidence — we build all three, together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="admissions" class="admissions">
+  <div class="wrap admissions-inner">
+    <div class="reveal-left">
+      <h2>Admission is in progress.</h2>
+      <p>Enrol your child today across Nursery, Primary or Secondary. Our admissions team will guide you through registration, assessment and placement — start to finish.</p>
+      <div class="hero-ctas" style="margin-top:24px;">
+        <a class="btn btn-primary" href="tel:+2347031302021">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2.28a2 2 0 012 1.72l.36 2.5a2 2 0 01-.53 1.72l-1.2 1.2a16 16 0 006.5 6.5l1.2-1.2a2 2 0 011.72-.53l2.5.36a2 2 0 011.72 2V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V6z"/></svg>
+          Call Admissions
+        </a>
+        <a class="btn btn-outline-light" href="mailto:successruth70@gmail.com" style="border-color:var(--ink); color:var(--ink);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          Email Admissions
+        </a>
+      </div>
+    </div>
+    <div class="steps reveal-right">
+      <ol>
+        <li>Reach out via phone or email to request the admission form.</li>
+        <li>Complete and submit the form with your child's details.</li>
+        <li>Attend a brief placement assessment and school tour.</li>
+        <li>Receive confirmation and resume for the term.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--chalk); border-top:1px solid var(--line);">
+  <div class="wrap contact-grid">
+    <div class="reveal-left">
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="font-size:30px;">We'd love to meet your family.</h2>
+      <ul class="contact-list">
+        <li>
+          <a class="c-row" href="tel:+2347031302021">
+            <span class="ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h2.28a2 2 0 012 1.72l.36 2.5a2 2 0 01-.53 1.72l-1.2 1.2a16 16 0 006.5 6.5l1.2-1.2a2 2 0 011.72-.53l2.5.36a2 2 0 011.72 2V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V6z"/></svg></span>
+            <div><span class="k">Phone</span><span class="v">0703 130 2021 — tap to call</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="c-row" href="https://wa.me/2347031302021" target="_blank" rel="noopener">
+            <span class="ico-wrap" style="background:#1E7A4C;"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.29-1.39c1.44.79 3.06 1.2 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.09c-.24.68-1.4 1.3-1.93 1.38-.49.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08 1-2.36.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.81 1.94.88 2.08.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.22 1.58 1.98 1.09.98 2 1.28 2.28 1.43.28.14.44.12.61-.07.17-.19.71-.82.9-1.1.19-.28.38-.23.63-.14.26.09 1.63.78 1.91.92.28.14.46.21.53.33.07.12.07.68-.17 1.36z"/></svg></span>
+            <div><span class="k">WhatsApp</span><span class="v">0703 130 2021 — tap to chat</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="c-row" href="tel:+2349074022509">
+            <span class="ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h2.28a2 2 0 012 1.72l.36 2.5a2 2 0 01-.53 1.72l-1.2 1.2a16 16 0 006.5 6.5l1.2-1.2a2 2 0 011.72-.53l2.5.36a2 2 0 011.72 2V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V6z"/></svg></span>
+            <div><span class="k">Phone (alt)</span><span class="v">0907 402 2509 — tap to call</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="c-row" href="mailto:successruth70@gmail.com">
+            <span class="ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></span>
+            <div><span class="k">Email</span><span class="v">successruth70@gmail.com — tap to email</span></div>
+          </a>
+        </li>
+        <li class="static">
+          <div class="c-row">
+            <span class="ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-7.2 8-13a8 8 0 10-16 0c0 5.8 8 13 8 13z"/><circle cx="12" cy="9" r="2.6"/></svg></span>
+            <div><span class="k">Address</span><span class="v">11 Imam Babatunde Street, Pipeline Road, Mosan, Ipaja, Lagos State</span></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal-right">
+      <div class="map-block">
+        <div>
+          <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="margin:0 auto;"><path d="M12 22s8-7.2 8-13a8 8 0 10-16 0c0 5.8 8 13 8 13z"/><circle cx="12" cy="9" r="2.6"/></svg>
+          <p>11 Imam Babatunde Street, Pipeline Road, Mosan, Ipaja, Lagos State</p>
+          <span>Open Monday – Friday</span>
+          <a class="btn btn-outline-light" style="margin-top:18px;" href="https://www.google.com/maps/search/?api=1&query=11+Imam+Babatunde+Street+Pipeline+Road+Mosan+Ipaja+Lagos" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-7.2 8-13a8 8 0 10-16 0c0 5.8 8 13 8 13z"/><circle cx="12" cy="9" r="2.6"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#top">
+        <div class="brand-text">
+          <div class="name">Success Private Schools</div>
+          <div class="sub">For a greater tomorrow</div>
+        </div>
+      </a>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#why">Why Us</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Success Private Schools. All rights reserved.</span>
+      <span>11 Imam Babatunde Street, Ipaja, Lagos · 0703 130 2021 · 0907 402 2509</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn?.addEventListener('click', () => {
+    const links = document.querySelector('nav.links');
+    const open = links.style.display === 'flex';
+    links.style.display = open ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.gap = '14px';
+    links.style.position = 'absolute';
+    links.style.top = '64px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = 'var(--chalk)';
+    links.style.padding = '18px 24px';
+    links.style.borderBottom = '1px solid var(--line)';
+    links.style.zIndex = '55';
+    if(!open){
+      links.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{ links.style.display='none'; }, {once:true});
+      });
+    }
+  });
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive:true });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el=> io.observe(el));
+  } else {
+    revealEls.forEach(el=> el.classList.add('is-visible'));
+  }
+
+  // count-up stat numbers every time they scroll into view, either direction
+  const statNums = document.querySelectorAll('.stat .num');
+  const reduceMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  const parseTarget = (el) => {
+    if(!el.dataset.target){
+      el.dataset.target = el.textContent.trim();
+    }
+    const raw = el.dataset.target;
+    const suffix = raw.replace(/[0-9]/g, '');
+    const value = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+    return { value: isNaN(value) ? null : value, suffix };
+  };
+  let countFrame = new WeakMap();
+  const animateCount = (el) => {
+    const { value, suffix } = parseTarget(el);
+    if(value === null) return;
+    if(reduceMotion){
+      el.textContent = value + suffix;
+      return;
+    }
+    if(countFrame.has(el)) cancelAnimationFrame(countFrame.get(el));
+    const duration = 900;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * value) + suffix;
+      if(progress < 1){
+        countFrame.set(el, requestAnimationFrame(step));
+      }
+    };
+    countFrame.set(el, requestAnimationFrame(step));
+  };
+  const resetCount = (el) => {
+    const { suffix } = parseTarget(el);
+    if(countFrame.has(el)) cancelAnimationFrame(countFrame.get(el));
+    el.textContent = '0' + suffix;
+  };
+  if('IntersectionObserver' in window && statNums.length){
+    const statIo = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          animateCount(entry.target);
+        } else {
+          resetCount(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    statNums.forEach(el=> statIo.observe(el));
+  }
+</script>
+
+</body>
+</html>
